@@ -1,0 +1,8 @@
+{
+    "AZURE_OPENAI_ENDPOINT": "https://rahulopenaiv01.openai.azure.com/",
+    "AZURE_OPENAI_KEY": "71c1784d0e094a0ca0458676186a3d22",
+    "AZURE_OPENAI_APIVERSION": "2024-05-01-preview",
+    "CHATGPT_MODEL": "rahuldeployv01"
+    
+    
+}

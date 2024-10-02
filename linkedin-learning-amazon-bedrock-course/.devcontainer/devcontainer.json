@@ -1,0 +1,16 @@
+{
+  "extensions": [
+    "GitHub.github-vscode-theme",
+    "ms-python.python"
+    // Additional Extensions Here
+  ],
+  "features": {
+    "aws-cli": "latest"
+},
+  "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
+  "postAttachCommand": "git pull --all",
+  "postCreateCommand": "pip install -r requirements.txt"
+  
+  // Update welcome text and set terminal prompt to '$ '
+}
+// DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference

@@ -1,6 +1,16 @@
 #Imports
 import boto3
 import json
+import os
+
+with open('config.json', 'r') as aws_creds:
+    data = aws_creds.read()
+creds = json.loads(data)
+
+ # Set environment variables for AWS credentials
+os.environ['AWS_ACCESS_KEY_ID'] = creds['AWS_ACCESS_KEY_ID']
+os.environ['AWS_SECRET_ACCESS_KEY'] = creds['AWS_SECRET_ACCESS_KEY']
+os.environ['AWS_DEFAULT_REGION'] = creds['AWS_DEFAULT_REGION']
 
 #Create the client
 client = boto3.client(service_name='bedrock-runtime')

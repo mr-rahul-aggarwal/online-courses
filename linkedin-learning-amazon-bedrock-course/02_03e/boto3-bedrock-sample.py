@@ -1,9 +1,17 @@
 #Imports
 import boto3
+import botocore
 import json
 
-#Create the bedrock client
-bedrock = boto3.client('bedrock-runtime')
+with open('config.json', 'r') as aws_creds:
+    data = aws_creds.read()
+creds = json.loads(data)
+
+# Create a client for the Bedrock service using the specified credentials and region
+bedrock = boto3.client(service_name='bedrock-runtime',
+                        region_name=creds["AWS_DEFAULT_REGION"],
+                        aws_access_key_id=creds["AWS_ACCESS_KEY_ID"],
+                        aws_secret_access_key=creds["AWS_SECRET_ACCESS_KEY"])
 
 #Setting the prompt
 prompt_data = """Command: Write me a blog about coaching employees as a leader.
@@ -12,7 +20,8 @@ Blog:
 """
 
 #Model specification
-modelId = "amazon.titan-text-express-v1"
+modelId = "amazon.titan-text-lite-v1"
+# modelId = "anthropic.claude-instant-v1"
 accept = "application/json"
 contentType = "application/json"
 

@@ -8,6 +8,18 @@ from langchain_community.vectorstores import FAISS
 from langchain.chains import LLMChain
 import streamlit as st
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
+import json
+import os
+
+with open('config.json', 'r') as aws_creds:
+    data = aws_creds.read()
+creds = json.loads(data)
+
+ # Set environment variables for AWS credentials
+os.environ['AWS_ACCESS_KEY_ID'] = creds['AWS_ACCESS_KEY_ID']
+os.environ['AWS_SECRET_ACCESS_KEY'] = creds['AWS_SECRET_ACCESS_KEY']
+os.environ['AWS_DEFAULT_REGION'] = creds['AWS_DEFAULT_REGION']
+
 
 #Configure streamlit app
 st.set_page_config(page_title="Social Media Training Bot", page_icon="📖")
@@ -41,6 +53,10 @@ def config_vector_db(filename):
 #Configuring the llm and vector store
 llm = config_llm()
 vectorstore_faiss = config_vector_db("03_06e/social-media-training.pdf")
+
+# Initialize session state for langchain_messages
+if 'langchain_messages' not in st.session_state:
+    st.session_state['langchain_messages'] = []
 
 #Set up memory
 msgs = StreamlitChatMessageHistory(key="langchain_messages")

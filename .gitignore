@@ -1,2 +1,32 @@
 *.DS_Store
 config.json
+
+# Ignore virtual environment directories
+venv/
+.env
+
+# Ignore Python environment files       
+*.env
+.venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore Jupyter Notebook checkpoints
+*.ipynb_checkpoints/
+
+# Ignore logs
+*.log
+
+# Ignore model files
+*.ckpt  
+*.bin
+*.pt
+*.h5
+*.tar
+*.zip
+*.tz
+*.data
+*.pb
+*.gz

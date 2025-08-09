@@ -10,6 +10,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     "watchdog>=6.0.0",
     "huggingface-hub[mcp]>=0.32.0",
+    "gradio[mcp]>=5.30.0",
 ]
 
 [project.scripts]

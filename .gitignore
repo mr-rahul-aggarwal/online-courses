@@ -3,8 +3,9 @@ config.json
 
 # Ignore virtual environment directories
 venv/
-.env
-
+.*/venv/
+*.env
+*.key
 # Ignore Python environment files       
 *.env
 .venv/

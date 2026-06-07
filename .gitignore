@@ -1,14 +1,12 @@
-*.DS_Store
+.DS_Store
 config.json
 
 # Ignore virtual environment directories
 venv/
 .*/venv/
+.venv/
 *.env
 *.key
-# Ignore Python environment files       
-*.env
-.venv/
 
 # Ignore Python bytecode files
 __pycache__/

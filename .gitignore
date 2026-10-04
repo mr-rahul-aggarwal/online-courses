@@ -1,5 +1,6 @@
 .DS_Store
 config.json
+dlai-A2A-The-Agent2Agent-Protocol/credentials.json
 
 # Ignore virtual environment directories
 venv/
